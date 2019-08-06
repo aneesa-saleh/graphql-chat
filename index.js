@@ -15,16 +15,6 @@ const db = {
   ]
 }
 
-class User {
-  constructor (user) {
-    Object.assign(this, user);
-  }
-
-  get message () {
-    return db.messages.filter(message => message.userId === this.userId);
-  }
-}
-
 const typeDefs = gql`
   type Query {
     user: [User!]!
@@ -76,3 +66,7 @@ const resolvers = {
     messages: user => db.messages.filter(message => message.userId === user.userId)
   }
 }
+
+const server = new ApolloServer({ typeDefs, resolvers });
+
+server.listen().then(({ url }) => console.log(url));
