@@ -64,8 +64,7 @@ const resolvers = {
   },
 
   User: {
-    messages: user =>
-      db.messages.filter(message => message.userId === user.userId)
+    messages: user => db.messages.filter(message => message.userId === user.id)
   }
 };
 
