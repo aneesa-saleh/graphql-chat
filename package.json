@@ -9,7 +9,7 @@
     "watch": "nodemon"
   },
   "dependencies": {
-    "apollo-server": "^2.8.1",
+    "apollo-server": "^2.14.2",
     "bcryptjs": "^2.4.3",
     "connect-redis": "^3.4.1",
     "crypto": "^1.0.1",
